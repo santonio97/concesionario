@@ -6,8 +6,8 @@
 
 
 let colecciones = {
-    articulos: { nombre: 'string', precio: 'number' },
-    clientes: { nombre: 'string', apellidos: 'string' }
+    concesionario: { cochesRegistrados: 'number', ubicacion: 'string', numVentas: 'number' },
+    coche: { marca: 'string', modelo: 'string', caracteristicas: 'string', precio: 'number', compras: 'number' }
 };
 
 let index = `
@@ -57,7 +57,6 @@ window.addEventListener('load', function () {
 
 });
 
-
 /*--------------------
  OPERACIONES CRUD 
 --------------------*/
@@ -74,7 +73,6 @@ function verDocumentos(coleccion) {
         })
 
 }
-
 
 function insertar(coleccion, objeto) {
     if (Object.values(objeto).every(x => (x !== null && x !== ''))) {
@@ -99,7 +97,6 @@ function insertar(coleccion, objeto) {
 
     }
 }
-
 
 function modificar(coleccion, id, objeto) {
     // let objeto = { nombre: campo1, precio: campo2 };
@@ -150,7 +147,6 @@ function eliminar(coleccion, id) {
 function entradaOK() {
     return true;
 }
-
 
 // Función para CONVERTIR JSON A TABLA HTML
 function json2table(collection, jsonData, classes) {
