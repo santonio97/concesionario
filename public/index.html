@@ -20,7 +20,29 @@
 
 <body>
     <h1>Concesionario M&aacute;rquez</h1>
-    <div><img src="https://www.actualidadmotor.com/wp-content/uploads/2017/11/concesionario-lotus-madrid-4.jpg" alt="coches"></div>
+    <div>
+        <img src="https://www.actualidadmotor.com/wp-content/uploads/2017/11/concesionario-lotus-madrid-4.jpg" alt="coches">
+    </div>
+
+    <nav>
+        <input name="menu-opcion" type="radio" id="menu-inicio" checked>
+        <label for="menu-inicio" id="menu-inicio-label"> <span> 🏠 </span></label>
+        <input name="menu-opcion" type="radio" id="menu-articulos">
+        <label for="menu-articulos" id="menu-articulos-label"> <span> 🛒 </span></label>
+        <input name="menu-opcion" type="radio" id="menu-clientes">
+        <label for="menu-clientes" id="menu-clientes-label"> <span> 👤 </span></label>
+    </nav>
+
+    <main id="contenido">
+        <div class="seccion" id="inicio"></div>
+        <div class="seccion" id="articulos"></div>
+        <div class="seccion" id="clientes"></div>
+    </main>
+
+    <div id="OK"> 😊 </div>
+    <div id="KO"> 😟 </div>
+
+    <script src="app.js"></script> <!-- Interfaz de interacción con el usuario -->
 </body>
 
 </html>
