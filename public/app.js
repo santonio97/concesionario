@@ -11,16 +11,16 @@ let colecciones = {
 };
 
 let index = `
-     <div style="margin: 50px">
-         <h1>Tiendaw</h1>
+     <div style="margin: 30px">
+         <h1>Concesionario</h1>
          <small><b>Ejemplo didáctico: PWA y Fullstack MEN (MongoDB + Express + NodeJS) </b></small>
          <br><br>
          <p>Esta SPA (Single Page Application) ofrece 3 opciones:</p>
          <br>
          <ul style="padding-left: 50px">
-           <li><b>Inicio</b>: Esta página con información.</li>
-           <li><b>Artículos</b>: Permite realizar operaciones CRUD sobre los artículos de la BD. </li>
-           <li><b>Clientes</b>: Permite realizar operaciones CRUD sobre los clientes de la BD.</li>
+           <li><b>Inicio</b>: Contiene la información de la aplicación.</li>
+           <li><b>Concesionario</b>: Permite realizar operaciones CRUD sobre los concesionarios de la BD. </li>
+           <li><b>Coches</b>: Permite realizar operaciones CRUD sobre los coches de la BD.</li>
          </ul>
      </div>`;
 
