@@ -1,13 +1,6 @@
-/* Referencias:
-   - https://codepen.io/travishorn/pen/qXvaKa
-   - https://travishorn.com/building-json2table-turn-json-into-an-html-table-a57cf642b84a
-   - https://codepen.io/mlegakis/pen/jBYPGr
-   */
-
-
 let colecciones = {
-    concesionario: { cochesRegistrados: 'number', ubicacion: 'string', numVentas: 'number' },
-    coche: { marca: 'string', modelo: 'string', caracteristicas: 'string', precio: 'number', compras: 'number' }
+    concesionario: { cochesRegistrados: 'number', ubicacion: 'string'/*, numVentas: 'number'*/ },
+    coche: { marca: 'string', modelo: 'string'/*, caracteristicas: 'string', precio: 'number', compras: 'number'*/ }
 };
 
 let index = `
@@ -21,8 +14,6 @@ let index = `
            <li><b>Coches</b>: Permite realizar operaciones CRUD sobre los coches de la BD.</li>
          </ul>
      </div>`;
-
-
 
 window.addEventListener('load', function () {
 
