@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const routes = require('./routes');
 
 //importaciones de los modulos
-const app = express();
+const app = express(); 
 //conexion a bbdd
 mongoose.connect('mongodb://localhost:27017/concesionario', { useNewUrlParser: true })
     .then(db => console.log('Conexión correcta a la BD'))
