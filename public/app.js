@@ -13,8 +13,6 @@ let colecciones = {
 let index = `
      <div style="margin: 30px">
          <h1>Concesionario</h1>
-         <small><b>Ejemplo didáctico: PWA y Fullstack MEN (MongoDB + Express + NodeJS) </b></small>
-         <br><br>
          <p>Esta SPA (Single Page Application) ofrece 3 opciones:</p>
          <br>
          <ul style="padding-left: 50px">
@@ -29,8 +27,8 @@ let index = `
 window.addEventListener('load', function () {
 
     let i = document.getElementById('inicio');
-    let a = document.getElementById('articulos');
-    let c = document.getElementById('clientes');
+    let a = document.getElementById('concesionarios');
+    let c = document.getElementById('coches');
 
     i.innerHTML = index;
     i.style.display = 'block';
@@ -41,15 +39,15 @@ window.addEventListener('load', function () {
         c.style.display = 'none'; c.innerHTML = '';
     });
 
-    document.getElementById('menu-articulos').addEventListener('click', function (e) {
-        verDocumentos('articulos');
+    document.getElementById('menu-concesionarios').addEventListener('click', function (e) {
+        verDocumentos('concesionarios');
         a.style.display = 'block';
         i.style.display = 'none';
         c.style.display = 'none'; c.innerHTML = '';
     });
 
-    document.getElementById('menu-clientes').addEventListener('click', function (e) {
-        verDocumentos('clientes');
+    document.getElementById('menu-coches').addEventListener('click', function (e) {
+        verDocumentos('coches');
         c.style.display = 'block';
         i.style.display = 'none';
         a.style.display = 'none'; a.innerHTML = '';
@@ -71,7 +69,6 @@ function verDocumentos(coleccion) {
             document.getElementById(`${coleccion}`).innerHTML
                 = json2table(coleccion, data, "table-responsive-full sort-table")
         })
-
 }
 
 function insertar(coleccion, objeto) {
@@ -94,12 +91,11 @@ function insertar(coleccion, objeto) {
                 KO.style.display = 'block';
                 setTimeout(() => KO.style.display = 'none', 1500);
             });
-
     }
 }
 
 function modificar(coleccion, id, objeto) {
-    // let objeto = { nombre: campo1, precio: campo2 };
+    //let objeto = { nombre: campo1, precio: campo2 };
 
     fetch(`/api/${coleccion}/${id}`,
         {
@@ -118,7 +114,6 @@ function modificar(coleccion, id, objeto) {
             KO.style.display = 'block';
             setTimeout(() => KO.style.display = 'none', 1500);
         });
-
 }
 
 function eliminar(coleccion, id) {
@@ -137,7 +132,6 @@ function eliminar(coleccion, id) {
             KO.style.display = 'block';
             setTimeout(() => KO.style.display = 'none', 1500);
         });
-    // }
 }
 
 /*--------------------

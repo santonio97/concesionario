@@ -189,12 +189,12 @@ label#menu-inicio-label>span::after {
     content: " Inicio";
 }
 
-label#menu-articulos-label>span::after {
-    content: " Artículos";
+label#menu-concesionarios-label>span::after {
+    content: " Concesionario";
 }
 
-label#menu-clientes-label>span::after {
-    content: " Clientes";
+label#menu-coches-label>span::after {
+    content: " Automóviles";
 }
 
 /***************************
@@ -297,7 +297,7 @@ caption {
     padding: 4px 8px;
 }
 
-.sort-table th.articulos-nombre, .sort-table th.articulos-precio, .sort-table th.clientes-nombre, .sort-table th.clientes-apellidos {
+.sort-table th.concesionarios-cochesRegistrados, .sort-table th.concesionarios-ubicacion, .sort-table th.concesionarios-numVentas, .sort-table th.coches-marca, .sort-table th.coches-modelo, .sort-table th.coches-caracteristicas, .sort-table th.coches.precio, .sort-table th.coches.compras {
     width: 30% !important;
 }
 
@@ -305,18 +305,18 @@ caption {
     width: 40% !important;
 }
 
-.sort-table .articulos-nombre, .sort-table .clientes-nombre {
+.sort-table .concesionarios-ubicacion, .sort-table .coches-marca {
     font-weight: bold;
 }
 
-.sort-table .articulos-nombre small, .sort-table .clientes-nombre small {
+.sort-table .concesionarios-ubicacion small, .sort-table .coches-marca small {
     font-weight: normal;
 }
 
 /* Responsive table full */
 
 @media (max-width: 767px) {
-    label#menu-inicio-label>span::after, label#menu-articulos-label>span::after, label#menu-clientes-label>span::after {
+    label#menu-inicio-label>span::after, label#menu-concesionarios-label>span::after, label#menu-coches-label>span::after {
         content: none;
     }
     table {
@@ -390,17 +390,17 @@ caption {
         margin: 3px 0;
         padding: 10px;
     }
-    .sort-table th.articulos-nombre, .sort-table th.articulos-precio, .sort-table th.clientes-nombre, .sort-table th.clientes-apellidos, .sort-table th.operacion {
+    .sort-table th.concesionarios-cochesRegistrados, .sort-table th.concesionarios-ubicacion, .sort-table th.concesionarios-numVentas, .sort-table th.coches-marca, .sort-table th.coches-modelo, .sort-table th.coches-caracteristicas, .sort-table th.coches.precio, .sort-table th.coches.compras, .sort-table th.operacion {
         width: 100px !important;
     }
-    .sort-table td.articulos-nombre:before, .sort-table td.clientes-nombre:before {
+    .sort-table td.concesionarios-ubicacion:before, .sort-table td.coches-marca:before {
         display: none;
     }
-    .sort-table td.articulos-nombre, .sort-table td.clientes-nombre {
+    .sort-table td.concesionarios-ubicacion, .sort-table td.coches-marca {
         letter-spacing: .03em;
         padding-left: 14px;
     }
-    .sort-table td.articulos-nombre>input .sort-table td.clientes-nombre>input {
+    .sort-table td.concesionarios-ubicacion>input .sort-table td.coches-marca>input {
         font-weight: bold;
     }
 }

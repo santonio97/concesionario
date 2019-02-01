@@ -32,20 +32,20 @@
 <body>
 
     <nav style="border:1px dotted black">
-        <input name="menu-opcion" type="radio" id="menu-inicio">
-        <label for="menu-inicio" id="menu-inicio-label"> <span> 🏠 </span></label>
+        <input name="menu-opcion" type="radio" id="menu-inicio" checked>
+        <label for="menu-inicio" id="menu-inicio-label"> <span> 🏠 </span> </label>
 
-        <input name="menu-opcion" type="radio" id="menu-articulos">
-        <label for="menu-articulos" id="menu-articulos-label"> Concesionario 🏬 </label>
+        <input name="menu-opcion" type="radio" id="menu-concesionarios">
+        <label for="menu-concesionarios" id="menu-concesionarios-label"> <span> 🏁 </span> </label>
 
-        <input name="menu-opcion" type="radio" id="menu-clientes">
-        <label for="menu-clientes" id="menu-clientes-label"> Coches 🚗 </label>
+        <input name="menu-opcion" type="radio" id="menu-coches">
+        <label for="menu-coches" id="menu-coches-label"> <span> 🚘 </span></label>
     </nav>
 
     <main id="contenido">
         <div class="seccion" id="inicio"></div>
-        <div class="seccion" id="articulos"></div>
-        <div class="seccion" id="clientes"></div>
+        <div class="seccion" id="concesionarios"></div>
+        <div class="seccion" id="coches"></div>
     </main>
 
     <div id="OK"> 😊 </div>
@@ -65,7 +65,6 @@
 
     <script src="service-worker.js"></script> <!-- Gestión de eventos del ServiceWorker -->
     <script src="app.js"></script> <!-- Interfaz de interacción con el usuario -->
-
 
 </body>
 
