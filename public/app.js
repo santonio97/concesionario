@@ -36,14 +36,14 @@ window.addEventListener('load', function () {
         c.style.display = 'none';  c.innerHTML = '';       
     });
 
-    document.getElementById('menu-concesionario').addEventListener('click', function (e) {
+    document.getElementById('menu-concesionarios').addEventListener('click', function (e) {
         verDocumentos('concesionario');
         a.style.display = 'block';
         i.style.display = 'none';
         c.style.display = 'none';  c.innerHTML = '';       
     });
 
-    document.getElementById('menu-coche').addEventListener('click', function (e) {
+    document.getElementById('menu-coches').addEventListener('click', function (e) {
         verDocumentos('coche');
         c.style.display = 'block';
         i.style.display = 'none';  
@@ -51,7 +51,6 @@ window.addEventListener('load', function () {
     });
 
 });
-
 
 /*--------------------
  OPERACIONES CRUD 
