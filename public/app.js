@@ -1,6 +1,6 @@
 let colecciones = {
-    concesionario: { cochesRegistrados: 'number', ubicacion: 'string'/*, numVentas: 'number'*/ },
-    coche: { marca: 'string', modelo: 'string'/*, caracteristicas: 'string', precio: 'number', compras: 'number'*/ }
+    concesionario: { cocheRegistrados: 'number', ubicacion: 'string'},
+    coche: { marca: 'string', modelo: 'string' }
 };
 
 let index = `
@@ -10,41 +10,48 @@ let index = `
          <br>
          <ul style="padding-left: 50px">
            <li><b>Inicio</b>: Contiene la información de la aplicación.</li>
-           <li><b>Concesionario</b>: Permite realizar operaciones CRUD sobre los concesionarios de la BD. </li>
-           <li><b>Coches</b>: Permite realizar operaciones CRUD sobre los coches de la BD.</li>
+           <li><b>Concesionario</b>: Permite realizar operaciones CRUD sobre los concesionario de la BD. </li>
+           <li><b>coche</b>: Permite realizar operaciones CRUD sobre los coche de la BD.</li>
          </ul>
      </div>`;
+
+     /* Referencias:
+   - https://codepen.io/travishorn/pen/qXvaKa
+   - https://travishorn.com/building-json2table-turn-json-into-an-html-table-a57cf642b84a
+   - https://codepen.io/mlegakis/pen/jBYPGr
+   */
 
 window.addEventListener('load', function () {
 
     let i = document.getElementById('inicio');
-    let a = document.getElementById('concesionarios');
-    let c = document.getElementById('coches');
+    let a = document.getElementById('concesionario');
+    let c = document.getElementById('coche');
 
     i.innerHTML = index;
     i.style.display = 'block';
 
     document.getElementById('menu-inicio').addEventListener('click', function (e) {
         i.style.display = 'block';
-        a.style.display = 'none'; a.innerHTML = '';
-        c.style.display = 'none'; c.innerHTML = '';
+        a.style.display = 'none';  a.innerHTML = '';
+        c.style.display = 'none';  c.innerHTML = '';       
     });
 
-    document.getElementById('menu-concesionarios').addEventListener('click', function (e) {
-        verDocumentos('concesionarios');
+    document.getElementById('menu-concesionario').addEventListener('click', function (e) {
+        verDocumentos('concesionario');
         a.style.display = 'block';
         i.style.display = 'none';
-        c.style.display = 'none'; c.innerHTML = '';
+        c.style.display = 'none';  c.innerHTML = '';       
     });
 
-    document.getElementById('menu-coches').addEventListener('click', function (e) {
-        verDocumentos('coches');
+    document.getElementById('menu-coche').addEventListener('click', function (e) {
+        verDocumentos('coche');
         c.style.display = 'block';
-        i.style.display = 'none';
-        a.style.display = 'none'; a.innerHTML = '';
+        i.style.display = 'none';  
+        a.style.display = 'none';  a.innerHTML = '';
     });
 
 });
+
 
 /*--------------------
  OPERACIONES CRUD 
@@ -60,11 +67,13 @@ function verDocumentos(coleccion) {
             document.getElementById(`${coleccion}`).innerHTML
                 = json2table(coleccion, data, "table-responsive-full sort-table")
         })
+
 }
+
 
 function insertar(coleccion, objeto) {
     if (Object.values(objeto).every(x => (x !== null && x !== ''))) {
-
+    
         fetch(`/api/${coleccion}`,
             {
                 method: 'POST',
@@ -82,11 +91,12 @@ function insertar(coleccion, objeto) {
                 KO.style.display = 'block';
                 setTimeout(() => KO.style.display = 'none', 1500);
             });
+
     }
 }
 
 function modificar(coleccion, id, objeto) {
-    //let objeto = { nombre: campo1, precio: campo2 };
+    // let objeto = { nombre: campo1, precio: campo2 };
 
     fetch(`/api/${coleccion}/${id}`,
         {
@@ -105,6 +115,7 @@ function modificar(coleccion, id, objeto) {
             KO.style.display = 'block';
             setTimeout(() => KO.style.display = 'none', 1500);
         });
+
 }
 
 function eliminar(coleccion, id) {
@@ -123,15 +134,12 @@ function eliminar(coleccion, id) {
             KO.style.display = 'block';
             setTimeout(() => KO.style.display = 'none', 1500);
         });
+    // }
 }
 
 /*--------------------
  FUNCIONES AUXILIARES 
 --------------------*/
-
-function entradaOK() {
-    return true;
-}
 
 // Función para CONVERTIR JSON A TABLA HTML
 function json2table(collection, jsonData, classes) {
@@ -222,9 +230,9 @@ function json2table(collection, jsonData, classes) {
     ${colNames.map(colName => celdaSinDatos(colName)).join(' ')} ${celdaInsertar}
     </tr> 
     ${jsonData.map(row =>
-            `<tr id="${row._id}">${colNames.map(colName => celdaConDatos(row, colName)).join(' ')} ${celdaModificarEliminar(row)}
+        `<tr id="${row._id}">${colNames.map(colName => celdaConDatos(row, colName)).join(' ')} ${celdaModificarEliminar(row)}
          </tr>`
-        ).join(' ')}
+    ).join(' ')}
 </tbody>
 </table>`;
 

@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
-const Concesionario = mongoose.model('Concesionario', {
+const concesionario = mongoose.model('Concesionario', {
     cochesRegistrados: Number,
     ubicacion: String,
     numVentas: Number
 });
 
-const Coche = mongoose.model('Coche', {
+const coche = mongoose.model('Coche', {
     marca: String,
     modelo: String,
     caracteristicas: String,
@@ -15,6 +15,6 @@ const Coche = mongoose.model('Coche', {
 });
 
 module.exports = {
-    Concesionario,
-    Coche
+    concesionario,
+    coche
 };

@@ -1,11 +1,11 @@
 const express = require('express');
-const { Concesionario, Coche } = require('./models');
+const { concesionario, coche } = require('./models');
 
 const router = express.Router();
 
 // ver todos los concesionarios
 router.get('/concesionario', (req, res) => {
-    Concesionario.find({}, (err, data) => {
+    concesionario.find({}, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
@@ -13,7 +13,7 @@ router.get('/concesionario', (req, res) => {
 
 // ver todos los coches
 router.get('/coche', (req, res) => {
-    Coche.find({}, (err, data) => {
+    coche.find({}, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
@@ -21,7 +21,7 @@ router.get('/coche', (req, res) => {
 
 // ver un concesionario
 router.get('/concesionario/:id', (req, res) => {
-    Concesionario.findOne({_id: req.params.id }, (err, data) => {
+    concesionario.findOne({_id: req.params.id }, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
@@ -29,7 +29,7 @@ router.get('/concesionario/:id', (req, res) => {
 
 // ver un coche
 router.get('/coche/:id', (req, res) => {
-    Coche.findOne({_id: req.params.id }, (err, data) => {
+    coche.findOne({_id: req.params.id }, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
@@ -37,7 +37,7 @@ router.get('/coche/:id', (req, res) => {
 
 // eliminar un concesionario
 router.delete('/concesionario/:id', (req, res) => {
-    Concesionario.findOneAndRemove({_id: req.params.id }, (err, data) => {
+    concesionario.findOneAndRemove({_id: req.params.id }, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
@@ -45,7 +45,7 @@ router.delete('/concesionario/:id', (req, res) => {
 
 // eliminar un coche
 router.delete('/coche/:id', (req, res) => {
-    Coche.findOneAndRemove({_id: req.params.id }, (err, data) => {
+    coche.findOneAndRemove({_id: req.params.id }, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
@@ -53,7 +53,7 @@ router.delete('/coche/:id', (req, res) => {
 
 // actualizar un concesionario
 router.put('/concesionario/:id', (req, res) => {
-    Concesionario.findOneAndUpdate({_id: req.params.id },
+    concesionario.findOneAndUpdate({_id: req.params.id },
         { $set: { cochesRegistrados: req.body.cochesRegistrados,
                   ubicacion: req.body.ubicacion,
                   numVentas: req.body.numVentas 
@@ -67,7 +67,7 @@ router.put('/concesionario/:id', (req, res) => {
 
 // actualizar un coche
 router.put('/coche/:id', (req, res) => {
-    Coche.findOneAndUpdate({_id: req.params.id },
+    coche.findOneAndUpdate({_id: req.params.id },
         { $set: { marca: req.body.marca,
                   modelo: req.body.modelo,
                   caracteristicas: req.body.caracteristicas,
