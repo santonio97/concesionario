@@ -18,4 +18,4 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use('/api', routes);
 // --- PUERTO DE ESCUCHA
-app.listen(3000, () => console.log('Servidor iniciado enpuerto 3000'));
+app.listen(3000, () => console.log('Servidor iniciado en puerto 3000'));
