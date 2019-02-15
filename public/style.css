@@ -65,8 +65,8 @@ input[type=radio]+label {
 input[type=radio]+label:hover {
     padding: 10px;
     border-radius: 5px;
-    color: rgb(0, 2, 104);
-    background: #ffffff;
+    color: rgb(0, 0, 0);
+    background: lightgray;
 }
 
 input[type=radio]:checked+label {
@@ -100,7 +100,8 @@ input {
     _float: right;
     padding: 10px;
     font-size: 14px;
-    color: rgb(0, 2, 104);
+    color: black;
+    background-color: #fdebc9;
     border: 0;
     outline: none;
     margin-left: 5px;

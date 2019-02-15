@@ -157,11 +157,11 @@ function json2table(collection, jsonData, classes) {
 <div class="sort-table-arrows">
     <button class="button" title="ascendente" onclick="
         sort(true, '${collection}-${campo}', 'content-table')">
-    <span>⬇️</span>
+    <span>⬆️</span>
     </button>
     <button class="button" title="descendente" onclick="
         sort(false, '${collection}-${campo}', 'content-table')">
-    <span>⬆️</span>
+    <span>⬇️</span>
     </button>
 </div>`;
 
