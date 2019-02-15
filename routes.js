@@ -1,19 +1,19 @@
 const express = require('express');
-const { concesionarios, coches } = require('./models');
+const { Concesionario, Coches } = require('./models');
 
 const router = express.Router();
 
 // ver todos los concesionarios
 router.get('/concesionario', (req, res) => {
-    concesionarios.find({}, (err, data) => {
+    Concesionario.find({}, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
 });
 
 // ver todos los coches
-router.get('/coche', (req, res) => {
-    coches.find({}, (err, data) => {
+router.get('/coches', (req, res) => {
+    Coches.find({}, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
@@ -21,15 +21,15 @@ router.get('/coche', (req, res) => {
 
 // ver un concesionario
 router.get('/concesionario/:id', (req, res) => {
-    concesionarios.findOne({_id: req.params.id }, (err, data) => {
+    Concesionario.findOne({_id: req.params.id }, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
 });
 
 // ver un coche
-router.get('/coche/:id', (req, res) => {
-    coches.findOne({_id: req.params.id }, (err, data) => {
+router.get('/coches/:id', (req, res) => {
+    Coches.findOne({_id: req.params.id }, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
@@ -37,15 +37,15 @@ router.get('/coche/:id', (req, res) => {
 
 // eliminar un concesionario
 router.delete('/concesionario/:id', (req, res) => {
-    concesionarios.findOneAndRemove({_id: req.params.id }, (err, data) => {
+    Concesionario.findOneAndRemove({_id: req.params.id }, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
 });
 
 // eliminar un coche
-router.delete('/coche/:id', (req, res) => {
-    coches.findOneAndRemove({_id: req.params.id }, (err, data) => {
+router.delete('/coches/:id', (req, res) => {
+    Coches.findOneAndRemove({_id: req.params.id }, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
@@ -53,10 +53,9 @@ router.delete('/coche/:id', (req, res) => {
 
 // actualizar un concesionario
 router.put('/concesionario/:id', (req, res) => {
-    concesionarios.findOneAndUpdate({_id: req.params.id },
+    Concesionario.findOneAndUpdate({_id: req.params.id },
         { $set: { cochesRegistrados: req.body.cochesRegistrados,
-                  ubicacion: req.body.ubicacion,
-                  numVentas: req.body.numVentas 
+                  ubicacion: req.body.ubicacion
                 } 
             },
         (err, data) => {
@@ -66,13 +65,10 @@ router.put('/concesionario/:id', (req, res) => {
 });
 
 // actualizar un coche
-router.put('/coche/:id', (req, res) => {
-    coches.findOneAndUpdate({_id: req.params.id },
+router.put('/coches/:id', (req, res) => {
+    Coches.findOneAndUpdate({_id: req.params.id },
         { $set: { marca: req.body.marca,
-                  modelo: req.body.modelo,
-                  caracteristicas: req.body.caracteristicas,
-                  precio: req.body.precio,
-                  compras: req.body.compras 
+                  modelo: req.body.modelo
                 } 
             },
         (err, data) => {
@@ -83,25 +79,21 @@ router.put('/coche/:id', (req, res) => {
 
 // insertar un concesionario
 router.post('/concesionario', (req, res) => {
-    const concesionarios = new concesionario({
+    const concesionario = new Concesionario({
         cochesRegistrados: req.body.cochesRegistrados,
-        ubicacion: req.body.ubicacion,
-        numVentas: req.body.numVentas
+        ubicacion: req.body.ubicacion
     });
-    concesionarios.save((err, data) => {
+    concesionario.save((err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
 });
 
 // insertar un coche
-router.post('/coche', (req, res) => {
-    const coches = new coche({
+router.post('/coches', (req, res) => {
+    const coches = new Coches({
         marca: req.body.marca,
-        modelo: req.body.modelo,
-        caracteristicas: req.body.caracteristicas,
-        precio: req.body.precio,
-        compras: req.body.compras
+        modelo: req.body.modelo
     });
     coches.save((err, data) => {
         if (err) res.json({ error: err });

@@ -1,6 +1,6 @@
 let colecciones = {
-    concesionario: { cocheRegistrados: 'number', ubicacion: 'string'},
-    coche: { marca: 'string', modelo: 'string' }
+    concesionario: { cochesRegistrados: 'number', ubicacion: 'string'},
+    coches: { marca: 'string', modelo: 'string' }
 };
 
 let index = `
@@ -11,7 +11,7 @@ let index = `
          <ul style="padding-left: 50px">
            <li><b>Inicio</b>: Contiene la información de la aplicación.</li>
            <li><b>Concesionario</b>: Permite realizar operaciones CRUD sobre los concesionario de la BD. </li>
-           <li><b>coche</b>: Permite realizar operaciones CRUD sobre los coche de la BD.</li>
+           <li><b>Coches</b>: Permite realizar operaciones CRUD sobre los coche de la BD.</li>
          </ul>
      </div>`;
 
@@ -25,7 +25,7 @@ window.addEventListener('load', function () {
 
     let i = document.getElementById('inicio');
     let a = document.getElementById('concesionario');
-    let c = document.getElementById('coche');
+    let c = document.getElementById('coches');
 
     i.innerHTML = index;
     i.style.display = 'block';
@@ -36,7 +36,7 @@ window.addEventListener('load', function () {
         c.style.display = 'none';  c.innerHTML = '';       
     });
 
-    document.getElementById('menu-concesionarios').addEventListener('click', function (e) {
+    document.getElementById('menu-concesionario').addEventListener('click', function (e) {
         verDocumentos('concesionario');
         a.style.display = 'block';
         i.style.display = 'none';
@@ -44,7 +44,7 @@ window.addEventListener('load', function () {
     });
 
     document.getElementById('menu-coches').addEventListener('click', function (e) {
-        verDocumentos('coche');
+        verDocumentos('coches');
         c.style.display = 'block';
         i.style.display = 'none';  
         a.style.display = 'none';  a.innerHTML = '';
@@ -94,6 +94,7 @@ function insertar(coleccion, objeto) {
     }
 }
 
+
 function modificar(coleccion, id, objeto) {
     // let objeto = { nombre: campo1, precio: campo2 };
 
@@ -140,6 +141,11 @@ function eliminar(coleccion, id) {
  FUNCIONES AUXILIARES 
 --------------------*/
 
+function entradaOK() {
+    return true;
+}
+
+
 // Función para CONVERTIR JSON A TABLA HTML
 function json2table(collection, jsonData, classes) {
 
@@ -173,7 +179,7 @@ function json2table(collection, jsonData, classes) {
 <button class="modificar" title="Modificar" onclick="
     modificar ('${collection}', '${fila._id}', {
         ${colNames[0]}: document.getElementById('${fila._id}.${colNames[0]}').value, 
-        ${colNames[1]}: document.getElementById('${fila._id}.${colNames[1]}').value 
+        ${colNames[1]}: document.getElementById('${fila._id}.${colNames[1]}').value
     }) ">
 <span>📝</span>
 </button>
@@ -253,7 +259,7 @@ function sort(ascending, columnClassName, tableId) {
             let nextRow = rows[r + 1];
             let value = row.getElementsByClassName(columnClassName)[0].childNodes[1].value;
             let nextValue = nextRow.getElementsByClassName(columnClassName)[0].childNodes[1].value;
-            value = value.replace(',', ''); // in case a comma is used in float number
+            value = value.replace(',', ' '); // in case a comma is used in float number
             nextValue = nextValue.replace(',', '');
             if (!isNaN(value)) {
                 value = parseFloat(value);

@@ -2,19 +2,15 @@ const mongoose = require('mongoose');
 
 const Concesionario = mongoose.model('concesionario', {
     cochesRegistrados: Number,
-    ubicacion: String,
-    numVentas: Number
+    ubicacion: String
 });
 
-const Coche = mongoose.model('coche', {
+const Coches = mongoose.model('coches', {
     marca: String,
-    modelo: String,
-    caracteristicas: String,
-    precio: Number,
-    compras: Number
+    modelo: String
 });
 
 module.exports = {
     Concesionario,
-    Coche
+    Coches
 };

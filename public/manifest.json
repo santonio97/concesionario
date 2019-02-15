@@ -1,5 +1,5 @@
 {
-    "name": "Tienda para ejemplo didáctico",
+    "name": "Concesionario",
     "short_name": "Tienda",
     "theme_color": "#2196f3",
     "background_color": "#2196f3",
@@ -9,7 +9,7 @@
     "icons": [
       {
         "src": "icono.png",
-        "sizes": "72x72",
+        "sizes": "82x82",
         "type": "image/png"
       },
       {

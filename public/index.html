@@ -27,7 +27,7 @@
     <meta name="msapplication-TileColor" content="#2F3BA2">
 
     <meta name="theme-color" content="#4285f4"> -->
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="/manifest.json">
 </head>
 
 <body>
@@ -36,8 +36,8 @@
         <input name="menu-opcion" type="radio" id="menu-inicio" checked>
         <label for="menu-inicio" id="menu-inicio-label"> <span> 🏠 </span> </label>
 
-        <input name="menu-opcion" type="radio" id="menu-concesionarios">
-        <label for="menu-concesionarios" id="menu-concesionarios-label"> <span> 🏁 </span> </label>
+        <input name="menu-opcion" type="radio" id="menu-concesionario">
+        <label for="menu-concesionario" id="menu-concesionario-label"> <span> 🏁 </span> </label>
 
         <input name="menu-opcion" type="radio" id="menu-coches">
         <label for="menu-coches" id="menu-coches-label"> <span> 🚘 </span></label>
@@ -46,12 +46,25 @@
     <main id="contenido">
         <div class="seccion" id="inicio"></div>
         <div class="seccion" id="concesionario"></div>
-        <div class="seccion" id="coche"></div>
+        <div class="seccion" id="coches"></div>
     </main>
 
     <div id="OK"> 😊 </div>
     <div id="KO"> 😟 </div>
+
+    <script>
+        // Si está soportado serviceWorker por el navegador
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker
+              .register('./service-worker.js')
+              .then(reg => console.log('[Service Worker] * Registrado.'))
+              .catch(err => console.log(`[Service Worker] * Error: ${err}`));
+          });
+        }
+      </script>
     
+    <script src="service-worker.js"></script> <!-- Gestión de eventos del ServiceWorker -->
     <script src="app.js"></script> <!-- Interfaz de interacción con el usuario -->
 
 </body>
