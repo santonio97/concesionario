@@ -189,7 +189,7 @@ function json2table(collection, jsonData, classes) {
 <button class="eliminar" title="Eliminar" onclick="
     eliminar('${collection}', '${fila._id}'); 
     document.getElementById('${fila._id}').remove()">
-<span>❌</span>
+<span><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/facebook/158/heavy-multiplication-x_2716.png" width="15" height="15"/></span>
 </button>
 `;
 

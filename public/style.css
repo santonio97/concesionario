@@ -24,29 +24,28 @@ html {
 }
 
 body {
-    background: #f5f5f5;
-    color: #333;
+    background: #cfcfcf;
+    color: black;
     -webkit-font-smoothing: antialiased;
     line-height: 1.42857143;
-    /*padding: 1em ; */
 }
 
 nav {
     padding: 10px;
     _background-color: var(--bgcolor-menu);
-    background-color: #2196f3;
+    background-color: #59c23f;
     width: 100%;
     position: fixed;
     font-weight: bolder;
     color: #ffffff;
-    text-shadow: -2px -2px 8px rgb(0, 0, 0);
-    text-shadow: 2px 2px 6px rgb(0, 0, 0);
+    text-shadow: -2px -2px 8px rgb(0, 2, 104);
+    text-shadow: 2px 2px 6px rgb(0, 2, 104);
     z-index: 1;
 }
 
 main {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
     z-index: 0;
 }
 
@@ -66,8 +65,8 @@ input[type=radio]+label {
 input[type=radio]+label:hover {
     padding: 10px;
     border-radius: 5px;
-    color: #000;
-    background: #a8e7f5;
+    color: rgb(0, 2, 104);
+    background: #ffffff;
 }
 
 input[type=radio]:checked+label {
@@ -101,7 +100,7 @@ input {
     _float: right;
     padding: 10px;
     font-size: 14px;
-    color: black;
+    color: rgb(0, 2, 104);
     border: 0;
     outline: none;
     margin-left: 5px;
@@ -135,33 +134,33 @@ button:hover {
 }
 
 button.insertar {
-    border: 1px solid #13a600;
-    color: #13a600;
+    border: 1px solid #ff7b00;
+    color: #ff7b00;
     content: " Insertar";
 }
 
 button.modificar {
-    border: 1px solid #0085a6;
-    color: #0085a6;
+    border: 1px solid #7700a6;
+    color: #7700a6;
     content: " Modificar";
 }
 
 button.eliminar {
-    border: 1px solid red;
-    color: red;
+    border: 1px solid rgb(17, 0, 255);
+    color: rgb(17, 0, 255);
     content: " Eliminar";
 }
 
 button.insertar:hover {
-    background: #c1ffc9;
+    background: #ffffff;
 }
 
 button.modificar:hover {
-    background: #a8e7f5;
+    background: #ffffff;
 }
 
 button.eliminar:hover {
-    background: #ffc1bf;
+    background: #ffffff;
 }
 
 button.insertar>span::after {
