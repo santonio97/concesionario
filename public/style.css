@@ -297,8 +297,8 @@ caption {
     padding: 4px 8px;
 }
 
-.sort-table th.concesionario-cochesRegistrados, .sort-table th.concesionario-ubicacion, .sort-table th.concesionario-numVentas, .sort-table th.coches-marca, .sort-table th.coches-modelo, .sort-table th.coches-caracteristicas, .sort-table th.coches.precio, .sort-table th.coches.compras {
-    width: 30% !important;
+.sort-table th.concesionario-cochesRegistrados, .sort-table th.concesionario-ubicacion, .sort-table th.concesionario-nombre, .sort-table th.coches-marca, .sort-table th.coches-modelo, .sort-table th.coches.precio {
+    width: 40% !important;
 }
 
 .sort-table th.operacion {
@@ -390,7 +390,7 @@ caption {
         margin: 3px 0;
         padding: 10px;
     }
-    .sort-table th.concesionario-cochesRegistrados, .sort-table th.concesionario-ubicacion, .sort-table th.concesionario-numVentas, .sort-table th.coches-marca, .sort-table th.coches-modelo, .sort-table th.coches-caracteristicas, .sort-table th.coches.precio, .sort-table th.coches.compras, .sort-table th.operacion {
+    .sort-table th.concesionario-cochesRegistrados, .sort-table th.concesionario-ubicacion, .sort-table th.concesionario-precio, .sort-table th.coches-marca, .sort-table th.coches-modelo, .sort-table th.coches.precio {
         width: 100px !important;
     }
     .sort-table td.concesionario-ubicacion:before, .sort-table td.coches-marca:before {

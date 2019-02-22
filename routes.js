@@ -55,7 +55,8 @@ router.delete('/coches/:id', (req, res) => {
 router.put('/concesionario/:id', (req, res) => {
     Concesionario.findOneAndUpdate({_id: req.params.id },
         { $set: { cochesRegistrados: req.body.cochesRegistrados,
-                  ubicacion: req.body.ubicacion
+                  ubicacion: req.body.ubicacion,
+                  nombre: req.body.nombre
                 } 
             },
         (err, data) => {
@@ -68,7 +69,8 @@ router.put('/concesionario/:id', (req, res) => {
 router.put('/coches/:id', (req, res) => {
     Coches.findOneAndUpdate({_id: req.params.id },
         { $set: { marca: req.body.marca,
-                  modelo: req.body.modelo
+                  modelo: req.body.modelo,
+                  precio: req.body.precio
                 } 
             },
         (err, data) => {
@@ -81,7 +83,8 @@ router.put('/coches/:id', (req, res) => {
 router.post('/concesionario', (req, res) => {
     const concesionario = new Concesionario({
         cochesRegistrados: req.body.cochesRegistrados,
-        ubicacion: req.body.ubicacion
+        ubicacion: req.body.ubicacion,
+        nombre: req.body.nombre
     });
     concesionario.save((err, data) => {
         if (err) res.json({ error: err });
@@ -93,7 +96,8 @@ router.post('/concesionario', (req, res) => {
 router.post('/coches', (req, res) => {
     const coches = new Coches({
         marca: req.body.marca,
-        modelo: req.body.modelo
+        modelo: req.body.modelo,
+        precio: req.body.precio
     });
     coches.save((err, data) => {
         if (err) res.json({ error: err });
