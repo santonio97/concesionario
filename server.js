@@ -17,5 +17,15 @@ app.use(morgan('dev'));
 // Rutas
 app.use(express.json());
 app.use('/api', routes);
+
+// --- MIDDLEWARE
+// Para redirigir trafico HTTP a HTTPS
+app.use((req, res, next) => {
+  if (req.header('x-forwarded-proto') !== 'https')
+    res.redirect(`https://${req.header('host')}${req.url}`);
+  else
+    next();
+});
+
 // --- PUERTO DE ESCUCHA
 app.listen(3000, () => console.log('Servidor iniciado en puerto 3000'));
