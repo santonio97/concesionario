@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost:27017/autos', { useNewUrlParser: true })
 
 // --- MIDDLEWARE
 app.use((req, res, next) => {
-  if (req.header('x-forwarded-proto') !== 'https')
+  if (req.header('x-forwarded-proto') !== 'https' && process.env.PORT )
     res.redirect(`https://${req.header('host')}${req.url}`);
   else
     next();
