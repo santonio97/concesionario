@@ -1,13 +1,13 @@
 const path = require('path');
 const express = require('express');
-const morgan = require('morgan');
 const mongoose = require('mongoose');
+const config   = require('./config');
 const routes = require('./routes');
 
 //importaciones de los modulos
 const app = express(); 
 //conexion a bbdd
-mongoose.connect('mongodb://localhost:27017/autos', { useNewUrlParser: true })
+mongoose.connect(config.db_uri, { useNewUrlParser: true })
     .then(db => console.log('Conexión correcta a la BD'))
     .catch(err => console.log('Error en la conexión a la BD'));
 
@@ -21,8 +21,6 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
-// modulo morgan para logger
-app.use(morgan('dev'));
 // Rutas
 app.use(express.json());
 app.use('/api', routes);
