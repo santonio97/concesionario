@@ -12,9 +12,9 @@ mongoose.connect('mongodb://localhost:27017/autos', { useNewUrlParser: true })
     .catch(err => console.log('Error en la conexión a la BD'));
 
 // --- MIDDLEWARE
+// Para redirigir trafico HTTP a HTTPS
 app.use((req, res, next) => {
   if (req.header('x-forwarded-proto') !== 'https' && process.env.PORT )
-    // Para redirigir trafico HTTP a HTTPS
     res.redirect(`https://${req.header('host')}${req.url}`);
   else
     next();
