@@ -13,12 +13,12 @@ mongoose.connect('mongodb://localhost:27017/autos', { useNewUrlParser: true })
 
 // --- MIDDLEWARE
 // Para redirigir trafico HTTP a HTTPS
-/*app.use((req, res, next) => {
+app.use((req, res, next) => {
   if (req.header('x-forwarded-proto') !== 'https')
     res.redirect(`https://${req.header('host')}${req.url}`);
   else
     next();
-});*/
+});
 
 app.use(express.static(path.join(__dirname, 'public')));
 // modulo morgan para logger
