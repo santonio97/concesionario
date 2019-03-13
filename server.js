@@ -12,6 +12,13 @@ mongoose.connect('mongodb://localhost:27017/autos', { useNewUrlParser: true })
     .catch(err => console.log('Error en la conexión a la BD'));
 
 // --- MIDDLEWARE
+app.use((req, res, next) => {
+  if (req.header('x-forwarded-proto') !== 'https')
+    res.redirect(`https://${req.header('host')}${req.url}`);
+  else
+    next();
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 // modulo morgan para logger
 app.use(morgan('dev'));
