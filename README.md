@@ -15,6 +15,6 @@ Aquí dejo algunas capturas de la aplicación desplegada en Heroku ya funcionand
   <img src="https://www.upload.ee/image/9697009/windows101.jpg" alt="windows" />  
   <img src="https://www.upload.ee/image/9697007/windows10.jpg" alt="windows" />
   
-  <h2>Ubuntu </h2> <h5>(en navegador)</h4>
+  <h2>Ubuntu </h2> <h4>(en navegador)</h4>
   <img src="https://www.upload.ee/image/9696989/ubuntu.jpg" alt="ubuntu" />  
   <img src="https://www.upload.ee/image/9697002/ubuntu1.jpg" alt="ubuntu" />
