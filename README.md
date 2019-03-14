@@ -8,9 +8,9 @@ URL de la página en Heroku: https://concesionariow.herokuapp.com/
 Este repositorio consiste en una aplicación con node.js donde podemos insertar concesionarios y coches. Se usa **Heroku** para desplegarla y **mLab** para almacenar la base de datos.  
 Aquí dejo algunas capturas de la aplicación desplegada en Heroku ya funcionando.  
 
-  ## Android ##
+  <h2>Android</h2>
   <img src="https://www.upload.ee/image/9697016/android1.jpg" alt="android" width="300" height="600" /> <img src="https://www.upload.ee/image/9697015/android.jpg" alt="android" width="300" height="600" />  
-  ## Windows ##
+  <h2>Windows</h2>
   <img src="https://www.upload.ee/image/9697009/windows101.jpg" alt="windows" />  
   <img src="https://www.upload.ee/image/9697007/windows10.jpg" alt="windows" />  
   <h2>Ubuntu</h2>
