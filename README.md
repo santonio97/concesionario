@@ -9,7 +9,7 @@ Este repositorio consiste en una aplicación con node.js donde podemos insertar 
 Aquí dejo algunas capturas de la aplicación desplegada en Heroku ya funcionando.  
 
   <h2>Android</h2>
-  <span><img src="https://www.upload.ee/image/9697016/android1.jpg" alt="android" width="300" height="600" /></span>&nbsp;&nbsp;&nbsp;&nbsp;<span><img src="https://www.upload.ee/image/9697015/android.jpg" alt="android" width="300" height="600" /></span>
+  <span><img src="https://www.upload.ee/image/9697016/android1.jpg" alt="android" width="300" height="600" /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><img src="https://www.upload.ee/image/9697015/android.jpg" alt="android" width="300" height="600" /></span>
   
   <h2>Windows</h2>
   <img src="https://www.upload.ee/image/9697009/windows101.jpg" alt="windows" />  
